@@ -51,7 +51,53 @@
     
 
     <!-- Contenido -->
-    <div class="container">
+    <div class="container-fluid py-5">
+        <div class="row">
+            <div class="col-xl-8">
+                <h1>Productos</h1>
+                <div class="row">
+                    <div class="col-3">
+                        <div class="card">
+                            <img src="https://placeimg.com/300/300/tech" class="card-img-top"></img>
+                            <div class="card-body p-2">
+                                <h5 class="card-title text-truncate">Titulo del producto lorem ipsum con texto mas largo</h5>
+                                <button class="btn btn-sm btn-success " data-toggle="tooltip" title="Agregar al carrito"><i class="fas fa-plus"></i>Agregar al carrito</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-3">
+                        <div class="card">
+                            <img src="https://placeimg.com/300/300/tech" class="card-img-top"></img>
+                            <div class="card-body p-2">
+                                <h5 class="card-title text-truncate">Titulo del producto lorem ipsum con texto mas largo</h5>
+                                <button class="btn btn-sm btn-success " data-toggle="tooltip" title="Agregar al carrito"><i class="fas fa-plus"></i>Agregar al carrito</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-3">
+                        <div class="card">
+                            <img src="https://placeimg.com/300/300/tech" class="card-img-top"></img>
+                            <div class="card-body p-2">
+                                <h5 class="card-title text-truncate">Titulo del producto lorem ipsum con texto mas largo</h5>
+                                <button class="btn btn-sm btn-success " data-toggle="tooltip" title="Agregar al carrito"><i class="fas fa-plus"></i>Agregar al carrito</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-3">
+                        <div class="card">
+                            <img src="https://placeimg.com/300/300/tech" class="card-img-top"></img>
+                            <div class="card-body p-2">
+                                <h5 class="card-title text-truncate">Titulo del producto lorem ipsum con texto mas largo</h5>
+                                <button class="btn btn-sm btn-success " data-toggle="tooltip" title="Agregar al carrito"><i class="fas fa-plus"></i>Agregar al carrito</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-4">
+                <h1>Carrito</h1>
+            </div>
+        </div>
         <!-- Contenido del sitio -->
     </div>
     <!-- Fin del Contenido -->
@@ -101,6 +147,10 @@
     <!--  WaitMe   -->
     <script src="assets/plugins/waitMe/waitMe.min.js"></script>
 
-
+    <script>
+        $(function () {
+            $('[data-toggle="tooltip"]').tooltip()
+        })
+    </script>
 </body>
 </html>
