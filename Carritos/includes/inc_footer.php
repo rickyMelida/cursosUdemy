@@ -42,6 +42,8 @@
     <!--  WaitMe   -->
     <script src="assets/plugins/waitMe/waitMe.min.js"></script>
 
+    <!-- Main.JS -->
+    <script src="assets/js/main.js"></script>
     <script>
         $(function () {
             $('[data-toggle="tooltip"]').tooltip()

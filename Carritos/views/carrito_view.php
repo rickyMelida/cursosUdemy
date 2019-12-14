@@ -124,7 +124,7 @@
                 </tr>
                 <tr>
                     <th>Envio</th>
-                    <td class="text-success text-right">$100.00</td>
+                    <td class="text-success text-right"> <?php echo SHIPPING_COST;?> </td>
                 </tr>
                 <tr>
                     <th>Total</th>
