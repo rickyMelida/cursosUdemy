@@ -32,6 +32,12 @@
      define('SHIPPING_COST', 99.90);
      
 
+     /**
+      * Incluir todas nuestra funciones personalizadas
+      */
+
+      require_once APP.'functions.php';
+
 
 
 
