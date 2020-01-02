@@ -2,8 +2,13 @@
 <?php 
     require_once "./app/config.php";
     
-    
-    render_view('carrito_view');
+    $data = 
+    [
+        'title' => 'Tienda de carrito', 
+        'products' => get_products()
+    ];
+
+    //Render de la vista
+    render_view('carrito_view', $data);
    
-    //require_once "./views/carrito_view.php";
 ?>

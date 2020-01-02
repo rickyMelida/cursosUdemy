@@ -5,7 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Proyecto 1 - Carrito</title>
+    <!-- Usamos el operador ternario para hacer el titulo -->
+    <title><?php echo (isset($data['title']) ? $data['title'] : 'Proyecto 01 - Carrito');?></title>
 
     <!--Bootstrap 4-->
     <link rel="stylesheet" href="<?php echo CSS.'bootstrap.min.css';?>"> 

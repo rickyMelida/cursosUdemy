@@ -7,60 +7,18 @@
         <div class="col-xl-8">
             <h1>Productos</h1>
             <div class="row">
-                <div class="col-3 mb-3">
-                    <div class="card">
-                        <img src="https://placeimg.com/300/300/tech" class="card-img-top"></img>
-                        <div class="card-body p-2">
-                            <h5 class="card-title text-truncate">Titulo del producto lorem ipsum con texto mas largo</h5>
-                            <button class="btn btn-sm btn-success " data-toggle="tooltip" title="Agregar al carrito"><i class="fas fa-plus"></i>Agregar al carrito</button>
+                <?php foreach($data['products'] as $p): ?>
+                    <div class="col-3 mb-3">
+                        <div class="card">
+                            <img src="<?php echo IMAGES.$p['imagen'];?>" class="card-img-top" alt="<?php echo $p['nombre'];?>"></img>
+                            <div class="card-body p-2">
+                                <h5 class="card-title text-truncate"><?php echo $p['nombre'];?></h5>
+                                <p class="text-success"><?php echo format_currency($p['precio']);?></p>
+                                <button class="btn btn-sm btn-success " data-toggle="tooltip" title="Agregar al carrito"><i class="fas fa-plus"></i>Agregar al carrito</button>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="col-3 mb-3">
-                    <div class="card">
-                        <img src="https://placeimg.com/300/300/tech" class="card-img-top"></img>
-                        <div class="card-body p-2">
-                            <h5 class="card-title text-truncate">Titulo del producto lorem ipsum con texto mas largo</h5>
-                            <button class="btn btn-sm btn-success " data-toggle="tooltip" title="Agregar al carrito"><i class="fas fa-plus"></i>Agregar al carrito</button>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-3 mb-3">
-                    <div class="card">
-                        <img src="https://placeimg.com/300/300/tech" class="card-img-top"></img>
-                        <div class="card-body p-2">
-                            <h5 class="card-title text-truncate">Titulo del producto lorem ipsum con texto mas largo</h5>
-                            <button class="btn btn-sm btn-success " data-toggle="tooltip" title="Agregar al carrito"><i class="fas fa-plus"></i>Agregar al carrito</button>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-3 mb-3">
-                    <div class="card">
-                        <img src="https://placeimg.com/300/300/tech" class="card-img-top"></img>
-                        <div class="card-body p-2">
-                            <h5 class="card-title text-truncate">Titulo del producto lorem ipsum con texto mas largo</h5>
-                            <button class="btn btn-sm btn-success " data-toggle="tooltip" title="Agregar al carrito"><i class="fas fa-plus"></i>Agregar al carrito</button>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-3 mb-3">
-                    <div class="card">
-                        <img src="https://placeimg.com/300/300/tech" class="card-img-top"></img>
-                        <div class="card-body p-2">
-                            <h5 class="card-title text-truncate">Titulo del producto lorem ipsum con texto mas largo</h5>
-                            <button class="btn btn-sm btn-success " data-toggle="tooltip" title="Agregar al carrito"><i class="fas fa-plus"></i>Agregar al carrito</button>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-3 mb-3">
-                    <div class="card">
-                        <img src="https://placeimg.com/300/300/tech" class="card-img-top"></img>
-                        <div class="card-body p-2">
-                            <h5 class="card-title text-truncate">Titulo del producto lorem ipsum con texto mas largo</h5>
-                            <button class="btn btn-sm btn-success " data-toggle="tooltip" title="Agregar al carrito"><i class="fas fa-plus"></i>Agregar al carrito</button>
-                        </div>
-                    </div>
-                </div>
+                <?php endforeach;?>
             </div>
         </div>
         <div class="col-xl-4 bg-light">

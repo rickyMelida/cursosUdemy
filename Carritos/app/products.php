@@ -18,7 +18,7 @@
             'id' => 2,
             'sku' => 123456,
             'nombre' => 'Playera c306 Bisson | Blanco',
-            'imagen' => '02.jpg',
+            'imagen' => '02.jpeg',
             'precio' => 61.50
         ],
         [
@@ -32,7 +32,7 @@
             'id' => 4,
             'sku' => 756415,
             'nombre' => 'Playera d306 Burrito Ortega | Blanco',
-            'imagen' => '04.jpg',
+            'imagen' => '04.jpeg',
             'precio' => 61.50
         ],
         [

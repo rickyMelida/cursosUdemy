@@ -1,4 +1,9 @@
 <?php
+    /**
+     * Inicializacion de sesion de usuario
+     */
+    session_start();
+
     /*
 
     *URL constantes 
