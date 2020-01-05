@@ -7,14 +7,18 @@ $(document).ready(function() {
         //Peticion ajax
         $.ajax({
             url: 'ajax.php',
-            type: 'GET',
+            type: 'POST',
             dataType: 'JSON',
+            data:
+            {
+                action
+            },
             beforeSend: function() {
                 wrapper.waitMe();
             }
         }).done(function(res){
             if(res.status == 200) {
-                wrapper.html(res.mensaje);
+                wrapper.html(res.data);
             }
             console.log(res);
         }).fail(function(err) {

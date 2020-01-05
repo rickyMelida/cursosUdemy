@@ -73,4 +73,19 @@
         return $_SESSION['cart'];
 
      }
+
+     function json_output($status=200, $msg='', $data=[]) {
+        http_response_code($status);
+        
+        $r=
+        [
+            'status' => $status,
+            'msg' => $msg,
+            'data' => $data
+        ];
+
+        echo json_encode($r);
+        die;
+    }
+
 ?>
