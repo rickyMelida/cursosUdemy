@@ -8,6 +8,8 @@
         'products' => get_products()
     ];
 
+
+
     //Render de la vista
     render_view('carrito_view', $data);
    
