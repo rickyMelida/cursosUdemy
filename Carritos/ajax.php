@@ -71,7 +71,13 @@
                 <button class="btn btn-sm btn-danger">Vaciar Carrito</button>
                 <!--- Fin del contenido del carrito  -->';
             }else {
-                $output .= 'No hay productos en el  carrito ';
+                $output .= 
+                '<div class="text-center py-5">
+                    <img src="'.IMAGES.'empty_cart.png'.'" title="No hay productos" class="img-fluid mb-3 " width=80 >
+                    <p class="text-muted">No hay productos en el  carrito</p> 
+                </div>    
+                    ';
+                
             }
             
             $output .=

@@ -60,12 +60,10 @@
 
         $cart =
         [
-            'products' => [],
+            'products'       => [],
             'total_products' => 0,
-            'subtotal' => 0,
-            'shipment' => 0,
-            'total' => 0,
-            'payment_url' => null
+            'cart_totals'     => calculate_cart_totals(),
+            'payment_url'    => null
         ];
 
         $_SESSION['cart'] = $cart;
@@ -74,7 +72,54 @@
 
      }
 
-     function json_output($status=200, $msg='', $data=[]) {
+    function calculate_cart_totals() {
+        //El carro no existe se inicializa
+        if(!isset($_SESSION['cart'])){
+            $cart_totals =
+            [
+                'subtotal' => 0,
+                'shipment' => 0,
+                'total' => 0,
+            ];
+            $_SESSION['cart']['cart_total'] = $cart_totals;
+            return $cart_totals;
+        }
+        
+        //Calcular los totales segun los productos en carrito
+        $subtotal = 0;
+        $shipment = SHIPPING_COST;
+        $total = 0;
+
+        //Si no hay productos pero el carrito si existe ya
+        if(empty($_SESSION['cart']['products'])) {
+            $cart_totals =
+            [
+                'subtotal' => 0,
+                'shipment' => 0,
+                'total' => 0,
+            ];
+            $_SESSION['cart']['cart_totals'] = $cart_totals;
+            return $cart_totals;
+        }
+
+        //Si ya hay productos hay que sumas las  cantidades
+        foreach($_SESSION['cart']['products'] as $p ) {
+            $_total = $p['cantidad'] * $p['precio'];
+            $subtotal = floatval($subtotal + $_total); 
+        }
+
+        $total = floatval($subtotal + $shipment);
+        $cart_totals =
+            [
+                'subtotal' => $subtotal,
+                'shipment' => $shipment,
+                'total' => $total,
+            ];
+            $_SESSION['cart']['cart_totals'] = $cart_totals;
+            return $cart_totals;
+    }
+
+    function json_output($status=200, $msg='', $data=[]) {
         http_response_code($status);
         
         $r=
@@ -87,5 +132,7 @@
         echo json_encode($r);
         die;
     }
+
+
 
 ?>
