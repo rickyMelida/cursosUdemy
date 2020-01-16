@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Promesas</title>
+</head>
+<body>
+    <h1>Promesas JS</h1>
+
+    <script>
+        let saludar = new Promise((resolve, reject) => {
+        
+            setTimeout(() => {
+                let saludo = 'Hola muy buenas a todos chavales!';
+                saludo = false;
+                //Si existe la variable saludo devolvemos el saludo en si misma
+                if(saludo) {
+                    resolve(saludo);
+                }else{
+                    reject('No hay salida');
+                }
+            }, 2000);
+        });
+
+        //El metodo then() es cuando ejecuta el resultado
+        //Dentro del ten esta el resultado
+        //EL metodo catch seria para capturar el posible error
+        saludar.then( resultado => {
+            alert(resultado);
+        })
+        .catch(err => {
+            alert(err);
+        });
+    </script>
+</body>
+</html>
