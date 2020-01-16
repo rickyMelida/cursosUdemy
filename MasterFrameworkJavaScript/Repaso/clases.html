@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Clases</title>
+</head>
+<body>
+    <h1>Repaso de las clases en JS</h1>
+
+    <script>
+        class Coche {
+            constructor(modelo, velocidad, antiguedad) {
+                this.modelo = modelo;
+                this.velocidad = velocidad;
+                this.antiguedad = antiguedad;
+            }
+
+            aumentaVelocidad() {
+                this.velocidad += 1;
+            }
+
+            reduceVelocidad() {
+                this.velocidad -= 1;
+            }
+        }
+
+
+        /*-------- Ejemplo de Herencia -----*/
+        class Autobus extends Coche {
+            constructor(modelo, velocidad, antiguedad) {
+                super(modelo, velocidad, antiguedad);
+                this.altura = 5;
+            }
+
+            mostrarAltura() {
+                return 'La altura es de '+ this.altura + ' mts '; 
+            }
+        }
+
+        let autobus = new Autobus('Mercedez', 200, 2008);
+        document.write('<p>La velocidad inicial del autobus es '+autobus.velocidad+'</p>');
+        console.log(autobus.mostrarAltura());
+        autobus.aumentaVelocidad();
+        autobus.aumentaVelocidad();
+        autobus.aumentaVelocidad();
+        document.write('<p>La velocidad final del autobus es '+autobus.velocidad+'</p>');
+
+
+
+
+        let coche1 = new Coche('BMW', 200, 2017);
+
+        document.write("<p>Velocidad: "+coche1.velocidad+"</p>");
+        coche1.aumentaVelocidad();
+        coche1.aumentaVelocidad();
+        coche1.aumentaVelocidad();
+        document.write("<p>Velocidad: "+coche1.velocidad+"</p>");
+
+
+
+    </script>
+</body>
+</html>
