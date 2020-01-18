@@ -1,0 +1,195 @@
+body {
+    text-align: center;
+    margin: 0px;
+    padding: 0px;
+    /*Fuentes*/
+    font-family: 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    /*suavizamos los estilos de letras*/
+    -webkit-font-smoothing: antialiased;
+    -moz-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: antialiased;
+
+}
+
+#header {
+    height: 120px;
+    widows: 100%;
+    background: white;
+    border-bottom: 1px solid #ccc;
+    border-top: 5px solid #61dafb;
+}
+
+.center {
+    width: 75%;
+    margin: 0px auto;
+}
+
+/*Con esto evitamos que todo el contenido que va despues del header suba */
+.clearfix {
+    clear: both;
+    float: none;
+}
+
+#logo {
+    width: 30%;
+    font-size: 30px;
+    float: left;
+    margin-top: 35px;
+}
+
+#logo img {
+    height: 60px;
+    display: block;
+    float: left;
+    margin-top: -10px;
+
+    /*hacemos que se mueva la imagen, linear seria que siempre va a tener la misma velocidad*/
+    animation: girar infinite 30s linear;
+}
+
+/*Creamos una animacion con keyframes*/
+@keyframes girar {
+    /*from seria desde que empieza la animacion*/
+    from {
+        /**/
+        transform: rotate(0deg);
+    }
+    /*hasta que acaba*/
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+#brand {
+    display: block;
+    margin: 0px;
+    float: left;
+}
+
+#menu {
+    width: 70%;
+    float: right;
+    font-size: 18px;
+}
+
+#menu ul {
+    /*altura de la linea de todos los elementos hijos*/
+    line-height: 85px;
+    width: 60%;
+    float: right;
+
+}
+
+#menu ul li {
+    /*Ponemos los elementos uno alado de otro, lo alinea y se convierte en un bloque*/
+    display: inline-block;
+    /*Quitamos los puntos de las listas*/
+    list-style: none;
+    text-decoration: none;
+    height: 46px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+#menu a{    
+    text-decoration: none;
+    color: #444;
+    /*Cuando yo haga hover */
+    transition: 300ms all;
+}
+
+#menu a:hover{    
+    color: #3cb2d3;
+}
+
+#slider {
+    widows: 100%;
+    height: 350px;
+    /*con line-height hacemos que se centre el texto*/
+    /*line-height: 320px;*/
+    color: white;
+    text-shadow: 0px 0px 5px #444;
+    
+    /*Degradado CSS extraido de https://www.cssmatic.com */
+    background: rgba(73,155,234,1);
+    background: -moz-radial-gradient(center, ellipse cover, rgba(73,155,234,1) 0%, rgba(32,124,229,1) 69%, rgba(32,124,229,1) 85%);
+    background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%, rgba(73,155,234,1)), color-stop(69%, rgba(32,124,229,1)), color-stop(85%, rgba(32,124,229,1)));
+    background: -webkit-radial-gradient(center, ellipse cover, rgba(73,155,234,1) 0%, rgba(32,124,229,1) 69%, rgba(32,124,229,1) 85%);
+    background: -o-radial-gradient(center, ellipse cover, rgba(73,155,234,1) 0%, rgba(32,124,229,1) 69%, rgba(32,124,229,1) 85%);
+    background: -ms-radial-gradient(center, ellipse cover, rgba(73,155,234,1) 0%, rgba(32,124,229,1) 69%, rgba(32,124,229,1) 85%);
+    background: radial-gradient(ellipse at center, rgba(73,155,234,1) 0%, rgba(32,124,229,1) 69%, rgba(32,124,229,1) 85%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#499bea', endColorstr='#207ce5', GradientType=1 );
+}
+
+#slider h1 {
+    /*Hacemos el margin-top a 0.2px para que funcione bien en firefox*/
+    margin-top: 0.2px;
+    padding: 0px;
+    padding-top: 130px;
+    text-align: center;
+}
+
+.btn-white {
+    display: block;
+    background: white;
+    color: rgb(88, 88, 88);
+    padding: 10px;
+    width: 100px;
+    height: 35px;
+    /*Lo centramos*/
+    margin: 0px auto;
+    font-size: 18px;
+    text-transform: uppercase ;
+    text-shadow: none;
+    text-decoration: none;
+    line-height: 35px;
+    box-shadow: 0px 0px 5px rgb(88, 88, 88);
+    margin-top: 40px;
+    border-radius: 4px;
+    transition: 300ms all;
+}
+
+.btn-white:hover {
+    background: #444;
+    color: white;
+}
+
+#slider.slider-small {
+    height: 150px;
+
+}
+
+#slider.slider-small h1{
+    margin-top: 0.2px;
+    padding: 0px;
+    padding-top: 53px;
+    text-align: center;
+}
+
+#content {
+    width: 70%;
+    float: left;
+    min-height: 450px;
+    margin-right: 20px;
+}
+
+#sidebar {
+    width: 25%;
+    float: left;
+}
+
+.sidebar-item {
+    background: #f7f7f7;
+    padding: 20px;
+    margin-top: 30px;
+}
+
+.sidebar-item h3 {
+    text-transform: uppercase;
+    font-size: 17px;
+    margin: 0px;
+    margin-bottom: 10px;
+    border-bottom: 3px solid #eee;
+    padding-bottom: 10px;
+
+}
