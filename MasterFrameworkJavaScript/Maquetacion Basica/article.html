@@ -5,29 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="./assets/css/styles.css">
-    <script>
-        window.addEventListener('load', event => {
-            let template = document.getElementById('article-template');
-
-            let articles = document.getElementById('articles');
-            for(let i=1; i<=5; i++) {
-                //clonamos el elemento template con todo lo que hay dentro de el
-                let clonado = template.cloneNode(true);
-                //Eliminamos el atributo id de las etiquetas clonadas ya que estan repetidas
-                clonado.removeAttribute("id");
-
-                //seleccionamos la etiqueta h2 de todas las etiquetas clonadas
-                let h2 = clonado.getElementsByTagName('h2')[0];
-
-                //Concatenamos el valor original del h2 con el index del buce for
-                h2.innerHTML = h2.textContent + " " + i;
-
-                //Agregamos datos dentro de la etiqueta con el id articles
-                articles.appendChild(clonado);
-            }
-        });
-        
-    </script>
     <title>Maquetacion Basico</title>
 </head>
 <body>
@@ -45,13 +22,13 @@
             <nav id="menu">
                 <ul>
                     <li>
-                        <a href="index.html">Inicio</a>
+                        <a href="#">Inicio</a>
                     </li>
                     <li>
-                        <a href="blog.html">Blog</a>
+                        <a href="#">Blog</a>
                     </li>
                     <li>
-                        <a href="formulario.html">Formulario</a>
+                        <a href="#">Formulario</a>
                     </li>
                     <li>
                         <a href="#">Pagina 1</a>
@@ -69,34 +46,33 @@
         </div>
     </header>
 
-    <div id="slider" class="slider-big">
-        <h1>Bienvenido al Curso de React con Victor Robles</h1>
-        <a href="#" class="btn-white">Ir al blog</a>
-    </div>
-
     <div class="center">
         <section id="content">
-            <h2 class="subheader">Ultimos articulos</h2>
-
-
             <!-- Listado de articulos -->
-            <div id="articles">
-                <article class="article-item" id="article-template">
+                <article class="article-item article-details" >
                     <div class="image-wrap">
                         <img src="./assets/images/image.jpg" alt="Paisaje">
                     </div>
     
-                    <h2>Articulo de Prueba</h2>
+                    <h1 class="subheader">Articulo de Prueba</h1>
                     <span class="date">
                         Hace 5 minutos
                     </span>
-                    <a href="#">Leer mas</a>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ornare ex quis arcu feugiat, id lacinia lorem congue. Nullam elementum purus a orci iaculis, in euismod odio posuere. Sed et ornare risus, et mattis nulla. Maecenas tempus iaculis arcu, ut suscipit lacus convallis pellentesque. Aliquam pharetra eu lacus et porttitor. Suspendisse sem nisi, lobortis et nisl vitae, tempus consectetur justo. Cras eget arcu sed nulla placerat laoreet ut at lorem. Cras cursus placerat nisi, nec eleifend lacus faucibus non. Phasellus fringilla lectus vitae turpis faucibus, fermentum blandit ante tincidunt.
+                    </p>
+
+                    <p>
+                        Praesent eu rutrum metus. Proin cursus ac nisi eu vestibulum. Donec lobortis eros sit amet dignissim tincidunt. Proin ut mollis neque, id commodo sem. Aenean pretium dolor sit amet maximus euismod. Mauris finibus vitae nulla scelerisque laoreet. Maecenas non ante nec lacus pharetra condimentum et sit amet massa. Aenean id enim vel dolor aliquam iaculis quis vel arcu. Nulla accumsan eleifend quam, at ultrices turpis scelerisque at. Aenean iaculis ultrices velit ut tempus. Curabitur imperdiet, turpis scelerisque pretium volutpat, purus felis ullamcorper est, in laoreet eros orci vel metus. Ut in nibh erat. Proin posuere tempor blandit. Suspendisse viverra in tellus non dapibus. Praesent non tellus felis. Phasellus lacinia tristique lacus, et iaculis nisi elementum sit amet.
+                    </p>
+                    <p>
+                        Vivamus finibus et ex id tristique. Vivamus vitae enim id lorem suscipit placerat eu vitae mi. Nulla accumsan lectus vitae lorem elementum tristique eu volutpat nibh. Morbi erat metus, dictum ac nunc ut, pharetra commodo felis. Pellentesque cursus nunc at leo pellentesque mollis. Donec id ligula mi. Phasellus lobortis purus sed mi consequat, a blandit arcu euismod. Praesent commodo viverra sollicitudin. Duis nec orci id ex imperdiet commodo vel non eros.
+                    </p>
                     <div class="clearfix"></div>
                 </article>
-            </div>
-            <!-- Agregar articulos via JS -->
-
         </section>
+
+
         <aside id="sidebar">
             <div id="nav-blog" class="sidebar-item">
                 <h3>Puedes hacer esto</h3>
