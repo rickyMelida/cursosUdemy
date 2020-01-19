@@ -354,3 +354,112 @@ textarea {
     margin-bottom: 0px;
     border: none;
 }
+
+
+
+/*--------------Responsive----------------*/
+
+/*Desde la anchura 0px hasta la anchura 1316px de pantalla*/
+@media(max-width: 1331px) {
+    /*Se ejecutan estos estilos*/
+    .center {
+        width: 85%;
+    }
+  
+}
+
+/*Desde la anchura 0px hasta la anchura 963px de pantalla*/
+@media(max-width: 1175px) {
+    /*Se ejecutan estos estilos*/
+    .center {
+        width: 95%;
+    }
+
+    #menu ul {
+        width: auto;
+    }
+   
+}
+
+
+@media(max-width: 770px) {
+    #logo {
+        float: none;
+        width: 240px;
+        margin: 0px auto;
+        margin-top: 20px;
+    }
+
+    #menu,
+    #menu ul {
+        /*Limpiamos los posibles flotados que haya*/
+       clear: both;
+       float: none;
+       width: 100%;
+       margin: 0px;
+       padding: 0px;
+       line-height: 43px;
+    }
+   
+    #content {
+        float: none;
+        width: 100%;
+    }
+
+    #sidebar {
+        float: none;
+        width: 60%;
+        margin: 0px auto;
+        margin-bottom: 50px;
+    }
+
+    #slider h1 {
+        padding-top: 115px;
+        font-size: 25px;
+    }
+
+    .mid-form {
+        width: 70%;
+    }
+}
+
+@media(max-width: 448px) {
+    #header {
+        min-height: 130px;
+        overflow: hidden;
+
+    }
+
+    #menu,
+    #menu ul {
+        line-height: 50px;
+    }
+
+    #menu ul li {
+        margin-left: 7px;
+        margin-right: 7px;
+    }
+
+    #slider {
+        height: 180px;
+    }
+
+    #slider h1 {
+        font-size: 19px;
+        padding-top: 30px;
+    }
+
+    #slider .btn-white {
+        margin-top: 20px;
+
+    }
+
+    #slider .slider-small {
+        height: 100px;
+    }
+
+    #slider .slider-small h1{
+        padding-top: 35px;
+    }
+
+}
