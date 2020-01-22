@@ -1,0 +1,20 @@
+Dependencias a instalar en NodeJS para el backend:
+npm install --save express
+""    ""     ""    body-parser
+""    ""     ""    mongoose
+""    ""     ""    validator
+
+Dependencias para la parte de dasarrollo:
+npm install --save-dev nodemon
+
+/*
+
+	La libreria express seria para crear el servidor y para trabajar con el protocolo HTTP
+	La libreria body-parser seria para que nos convierta los datos enviados desde el formulario en archivos JSON
+	La libreria mongoose seria el  nexo(por decirlo asi) entre NodeJS y la BD MongoDB
+	La libreria connect-multiparty para trabajar con upload y subir ficheros, y datos de tipo archivo, lo va a procesar y lo va a guardar
+	La libreria validator hacer validaciones en backend extraidos desde el formulario
+
+
+	La dependencia nodemon seria para que nos resetee el servidor a la hora de que este realice cambios, para no tener que parar cada rato el servidor
+*/
