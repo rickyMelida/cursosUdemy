@@ -16,20 +16,10 @@ app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json());
 
 //Cargar CORS para realizar peticiones desde frontend
+let articleRutes  = require('./routes/article');
 
-//Agregar prefijos a rutas
-
-//Ruta o metodo de prueba para el API REST
-//req es lo que recibo y res es lo que respondo
-app.get('/probando', (req, res)=> {
-    
-    return res.status(200).send({
-        curso: 'Master en Framework JS',
-        autor: 'Victor Robles',
-        url: 'victorroblesweb.es'
-    });
-});
-
+//Agregar prefijos a rutas / cargar rutas
+app.use('/api', articleRutes);
 
 
 //Exportar modulo (fichero actual)
