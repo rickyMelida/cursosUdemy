@@ -74,7 +74,7 @@
 
     function calculate_cart_totals() {
         //El carro no existe se inicializa
-        if(!isset($_SESSION['cart'])){
+        if(!isset($_SESSION['cart']) || empty($_SESSION['cart']['products'])){
             $cart_totals =
             [
                 'subtotal' => 0,

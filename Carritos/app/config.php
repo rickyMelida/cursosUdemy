@@ -11,7 +11,7 @@
     */
 
     define('PORT', '80');
-    define('BASEPATH', '/cursosUdemy/Carritos/');
+    define('BASEPATH', '/Cursos Udemy/Carritos/');
     define('URL', 'http://127.0.0.1:'.PORT.BASEPATH);
 
     /**

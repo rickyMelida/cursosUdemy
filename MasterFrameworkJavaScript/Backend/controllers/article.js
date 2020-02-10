@@ -4,6 +4,7 @@ var validator = require('validator');
 var Article = require('../models/article');
 
 let controller = {
+    //metodo de los datos del curso
     datosCurso: (req, res)=> {
         var hola = req.body.hola;
     
@@ -15,12 +16,14 @@ let controller = {
         });
     },
 
+    //Metodo test 
     test: (req, res) => {
         return res.status(200).send({
             message: 'soy la accion test de mi controlador de articulos'
         });
     },
 
+    //Metodo para guardar datos en la BD MongoDB
     save: (req, res) => {
         //Recoger parametros  por post
         var params  =req.body;
@@ -81,6 +84,161 @@ let controller = {
             });
         }
 
+    },
+
+    //Metodo para obtener datos de la BD
+    getArticles: (req, res) => {
+
+        //Hacemos un find para sacar datos de la BD
+        //Se podria pasar las condiciones para extrer los datos pero esta vez lo dejamos vacios para extraer todos los datos
+        var query = Article.find();
+
+        var last = req.params.last;
+
+        if(last || last != undefined) {
+            //Le ponemos el limite de articulos de la BD
+            query.limit(5);
+        }
+        //el metodo sort() le decimos en que orden nos va a mostrar los datos y en base a que, y si le ponemos un menos(-), nos invierte el orden
+        query.sort('-_id').exec((err, article)=>{
+
+            if(err) {
+                return res.status(500).send({
+                    status: 'error',
+                    message: 'Error al devolver los datos !!'
+                });
+            }
+
+            if(!article) {
+                return res.status(404).send({
+                    status: 'error',
+                    message: 'No hay articulos para mostrar!!'
+                });
+            }
+
+            return res.status(200).send({
+                status: 'success',
+                article
+            });
+        });
+
+    },
+
+    //Metodo para extraer un solo articulo
+    getArticle: (req, res) => {
+        //Recoger el id de la url
+        var articleId = req.params.id;
+
+        //Comprobar que existe
+        if(!articleId || articleId == null) {
+            res.status(404).send({
+                status: 'Error',
+                message: 'No existe el articulo'
+            });
+        }
+
+        //Buscar el articulo
+        Article.findById(articleId, (err, article) => {
+            
+            if(err || !article) {
+                res.status(404).send({
+                    status: 'Error',
+                    message: 'No existe el articulo!!'
+                });
+            }
+
+
+            //Devolver una respuesta en json
+            res.status(200).send({
+                status: 'success',
+                article
+            });        
+        });
+        
+    },
+
+    //Metodo para actualizar datos
+    upate: (req, res) => {
+        //Recoger el id del articulo que viene por la URL
+        var articleId = req.params.id;
+
+        //Recoger los datos que llegan por el metodo put
+        var params = req.body;
+
+        //validar los datos
+        try {
+            var validateTitle = !validator.isEmpty(params.title);
+            var validateContent = !validator.isEmpty(params.content);
+
+        } catch (err) {
+            return res.status(200).send({
+                status: 'Error',
+                message: 'Faltan datos por enviar!!'
+            });
+        }
+
+        if(validateTitle && validateContent) {
+            //Realizar un find and update
+            Article.findOneAndUpdate({_id: articleId}, params, {new: true}, (err, articleUpdated)=> {
+                if(err) {
+                    return res.status(500).send({
+                        status: 'Error',
+                        message: 'Error al actualizar!!'
+                    });
+                }
+
+                if(!articleUpdated) {
+                    return res.status(404).send({
+                        status: 'Error',
+                        message: 'No existe el articulo!!'
+                    });
+                }
+
+                return res.status(200).send({
+                    status: 'success',
+                    article: articleUpdated
+                });
+            });
+
+        }else {
+            return res.status(200).send({
+                status: 'Error',
+                message: 'La validacion no es correcta!!'
+            });
+        }
+
+
+    },
+
+    //Metodo para eliminar datos de la BD
+    delete: (req, res) => {
+
+        //Recoger el id de la url
+        var articleId = req.params.id;
+
+        //Find and Delete
+        Article.findOneAndDelete({_id: articleId}, (err, articleRemoved) => {
+
+            if(err) {
+                return res.status(500).send({
+                    status: 'Error',
+                    message: 'Error al borrar !!'
+                });
+            }
+            
+
+            if(!articleRemoved) {
+                return res.status(404).send({
+                    status: 'Error',
+                    message: 'No se ha borrado el articulo, posiblemente no exista !!'
+                });
+            }
+
+            return res.status(200).send({
+                status: 'success',
+                article: articleRemoved
+            });
+        });
     }
 };//end controller
 
