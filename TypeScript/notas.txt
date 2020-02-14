@@ -1,0 +1,6 @@
+Para compilar TS solo seria: 
+tsc hola.ts
+
+Para que pueda estar a la escuha de cualquier cambio seria:
+
+tsc hola.ts --watch
