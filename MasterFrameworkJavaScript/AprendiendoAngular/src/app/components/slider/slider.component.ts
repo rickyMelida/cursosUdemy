@@ -9,6 +9,7 @@ export class SliderComponent implements OnInit {
 
   //Importamos el valor nombre que se ha pasado desde el componente padre, es decir el componente app
   @Input() public nombre:string;
+  @Input() size:string;
 
   constructor() { }
 
