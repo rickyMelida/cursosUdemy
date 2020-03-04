@@ -7,9 +7,9 @@
     <section id="content">
         <h1 class="subheader">Peliculas</h1>
 
-
+        <!--  
         <h2>{{titulo}}</h2>
-        <!-- Se llama evento click-->
+        < Se llama evento click>
         <button (click)='cambiarTitulo()'>Pulsame</button>
 
         <hr>
@@ -33,34 +33,15 @@
 
         <hr>
         <h2 class="subheader">Listado de peliculas</h2>
+    -->
 
         <!--- Todos los articulos solo se van a mostrar cuando exista peliculas -->
         <div id="articles" *ngIf="peliculas">
-
-            <!-- Por cada vuelta que le des al array creame una variable llamada pelicula, index, seria el indice -->
-            <article class="article-item " *ngFor="let pelicula of peliculas; let i=index">
-                <div class="image-wrap">
-                    <img src="{{pelicula.image}}" alt="{{pelicula.title}}">
-                </div>
-
-                <h2 class="subheader">{{pelicula.title}}</h2>
-                <span class="date">
-                    Hace 5 minutos
-                </span>
-
-                <!-- <span class="year" [class.year-green] = "pelicula.year > 2016"
-                           [class.year-red] = "pelicula.year < 2016"> -->
-
-                <span class="year" [ngClass]="{
-                        'year-green': pelicula.year > 2016,
-                        'year-red': pelicula.year < 2016
-                    }">
-                    {{pelicula.year}}
-                </span>
-                <a href="#">Leer mas</a>
-
-                <div class="clearfix"></div>
-            </article>
+            <div *ngFor="let pelicula of peliculas; let i=index">
+                <app-pelicula
+                    [pelicula] = "pelicula"
+                ></app-pelicula>
+            </div>
         </div>
 
     </section>
