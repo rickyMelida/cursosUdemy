@@ -5,6 +5,18 @@
 
 <div class="center">
     <section id="content">
+
+        <div id="favorita" *ngIf="favorita">
+            <h2 class="subheader">
+                Pelicula Favorita
+            </h2>
+            <h4>
+                {{favorita.title}}
+            </h4>
+            <h5>
+                {{favorita.year}}
+            </h5>
+        </div>
         <h1 class="subheader">Peliculas</h1>
 
         <!--  
@@ -38,8 +50,10 @@
         <!--- Todos los articulos solo se van a mostrar cuando exista peliculas -->
         <div id="articles" *ngIf="peliculas">
             <div *ngFor="let pelicula of peliculas; let i=index">
+                <!-- Recogemos los datos que viene del elemento hijo con el metodo mostrarFavorita -->
                 <app-pelicula
                     [pelicula] = "pelicula"
+                    (MarcarFavorita)="mostrarFavorita($event)"
                 ></app-pelicula>
             </div>
         </div>

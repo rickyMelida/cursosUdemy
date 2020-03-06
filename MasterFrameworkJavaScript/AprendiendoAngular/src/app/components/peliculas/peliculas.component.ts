@@ -16,6 +16,7 @@ import { Pelicula } from '../../models/pelicula';
 export class PeliculasComponent implements OnInit, DoCheck, OnDestroy {
   public titulo: string;
   public peliculas: Pelicula[];
+  public favorita: Pelicula;
 
   //El constructor es para asignar valores, NO es para meter logica dentro
   constructor() { 
@@ -51,6 +52,12 @@ export class PeliculasComponent implements OnInit, DoCheck, OnDestroy {
   
   ngOnDestroy() {
     console.log('El componente se va a eliminar')
+  }
+
+  //Recogemos los datos que viene del elemento hijo con el metodo mostrarFavorita
+  mostrarFavorita(event) {
+    this.favorita = event.pelicula;
+    //console.log('El titulo es ' + this.favorita.title);
   }
 
 }
