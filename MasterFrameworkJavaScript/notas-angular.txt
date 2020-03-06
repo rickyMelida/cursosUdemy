@@ -1,0 +1,11 @@
+//Creamos componentes en Amgular con el siguiente componente:
+	ng g component components/peliculas
+//Donde g seria generate, components seria la carpeta y peliculas el nombre del componente
+
+
+//Se agregan clases en angulas con [ngClass] con una condicion
+	[ngClass]="{
+
+		'year-green' : pelicula.year > 2016,
+		'year-red' : pelicula.year > 2016	
+	}"
