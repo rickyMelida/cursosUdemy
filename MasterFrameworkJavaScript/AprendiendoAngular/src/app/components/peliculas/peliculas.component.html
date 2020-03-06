@@ -13,8 +13,11 @@
             <h4>
                 {{favorita.title}}
             </h4>
+            <h4>
+                {{favorita.year | espar}}
+            </h4>
             <h5>
-                {{favorita.year}}
+                {{this.fecha | date: 'dd/MM/yyyy'}}
             </h5>
         </div>
         <h1 class="subheader">Peliculas</h1>

@@ -17,6 +17,7 @@ export class PeliculasComponent implements OnInit, DoCheck, OnDestroy {
   public titulo: string;
   public peliculas: Pelicula[];
   public favorita: Pelicula;
+  public fecha: any;
 
   //El constructor es para asignar valores, NO es para meter logica dentro
   constructor() { 
@@ -33,6 +34,8 @@ export class PeliculasComponent implements OnInit, DoCheck, OnDestroy {
       // {  year: 2011, titulo: 'Batman vs Superman', image: 'https://i.ytimg.com/vi/Vzi5Q5aIGJU/maxresdefault.jpg'}
 
     ];
+
+    this.fecha = new Date(2020, 8, 12);
   }
 
   //El metodo ngOnInit() SI es para meter logica dentro de ella antes de que se ejecute todo el componente

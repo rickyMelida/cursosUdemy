@@ -16,6 +16,7 @@ import { FomularioComponent } from './components/fomulario/fomulario.component';
 import { PaginaComponent } from './components/pagina/pagina.component';
 import { ErrorComponent } from './components/error/error.component';
 import { PeliculaComponent } from './components/pelicula/pelicula.component';
+import { EsParPipe } from './pipes/espar.pipe';
 
 
 @NgModule({
@@ -34,6 +35,7 @@ import { PeliculaComponent } from './components/pelicula/pelicula.component';
     PaginaComponent,
     ErrorComponent,
     PeliculaComponent,
+    EsParPipe
   ],
   imports: [
     BrowserModule,
