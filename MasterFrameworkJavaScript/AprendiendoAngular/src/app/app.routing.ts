@@ -24,6 +24,5 @@ const appRutes: Routes = [
 ];
 
 //Exportar el modulo de rutas
-
 export const appRoutingProviders: any[] = [];
 export const routing: ModuleWithProviders = RouterModule.forRoot(appRutes);
