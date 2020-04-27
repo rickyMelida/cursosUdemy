@@ -6,6 +6,7 @@ import { Pelicula } from 'src/app/models/pelicula';
   templateUrl: './pelicula.component.html',
   styleUrls: ['./pelicula.component.css']
 })
+
 export class PeliculaComponent implements OnInit {
 
   @Input() pelicula: Pelicula;

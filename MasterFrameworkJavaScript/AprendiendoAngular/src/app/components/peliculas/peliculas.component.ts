@@ -7,11 +7,13 @@ import { Component, OnInit, DoCheck, OnDestroy } from '@angular/core';
 
 //Importamos el modelo Pelicula
 import { Pelicula } from '../../models/pelicula';
+import { PeliculaService } from '../../services/peliculas.service';
 
 @Component({
   selector: 'peliculas',
   templateUrl: './peliculas.component.html',
-  styleUrls: ['./peliculas.component.css']
+  styleUrls: ['./peliculas.component.css'],
+  providers: [PeliculaService]
 })
 export class PeliculasComponent implements OnInit, DoCheck, OnDestroy {
   public titulo: string;
@@ -20,20 +22,9 @@ export class PeliculasComponent implements OnInit, DoCheck, OnDestroy {
   public fecha: any;
 
   //El constructor es para asignar valores, NO es para meter logica dentro
-  constructor() { 
+  constructor(  private _peliculaService: PeliculaService  ) { 
     this.titulo = 'Componente Peliculas';
-    this.peliculas = [
-      new Pelicula('SpideMan 4', 2019, 'https://wipy.tv/wp-content/uploads/2020/01/Kraven-the-Hunter-apareceri%CC%81a-en-spiderman-3-1.jpg'),
-      new Pelicula('Los Vengadores Endgame', 2018, 'https://www.infobae.com/new-resizer/Q0mcG4O1g_azb4mIsKSRLDDgpYI=/750x0/filters:quality(100)/s3.amazonaws.com/arc-wordpress-client-uploads/infobae-wp/wp-content/uploads/2019/04/28204703/Avengers-Endgame-1212.png'),
-      new Pelicula('Batman vs Superman', 2015, 'https://i.ytimg.com/vi/Vzi5Q5aIGJU/maxresdefault.jpg'),
-      new Pelicula('Batman vs Superman', 2015, 'https://i.ytimg.com/vi/Vzi5Q5aIGJU/maxresdefault.jpg')
-
-      // {  year: 2019, titulo: 'SpideMan 4',  image: 'https://wipy.tv/wp-content/uploads/2020/01/Kraven-the-Hunter-apareceri%CC%81a-en-spiderman-3-1.jpg'},
-      // {  year: 2018, titulo: 'Los Vengadores Endgame',  image: 'https://www.infobae.com/new-resizer/Q0mcG4O1g_azb4mIsKSRLDDgpYI=/750x0/filters:quality(100)/s3.amazonaws.com/arc-wordpress-client-uploads/infobae-wp/wp-content/uploads/2019/04/28204703/Avengers-Endgame-1212.png'},
-      // {  year: 2015, titulo: 'Batman vs Superman', image: 'https://i.ytimg.com/vi/Vzi5Q5aIGJU/maxresdefault.jpg'},
-      // {  year: 2011, titulo: 'Batman vs Superman', image: 'https://i.ytimg.com/vi/Vzi5Q5aIGJU/maxresdefault.jpg'}
-
-    ];
+    this.peliculas = this._peliculaService.getPeliculas();
 
     this.fecha = new Date(2020, 8, 12);
   }
@@ -42,6 +33,7 @@ export class PeliculasComponent implements OnInit, DoCheck, OnDestroy {
   ngOnInit(): void {
     console.log(this.peliculas)
     console.log('Evento OnInit lanzado');
+    console.log(this._peliculaService.holaMundo());
   }
 
   ngDoCheck() {
